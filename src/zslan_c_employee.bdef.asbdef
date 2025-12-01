@@ -1,0 +1,15 @@
+projection;
+strict ( 2 );
+
+define behavior for ZSLAN_C_EMPLOYEE //alias <alias_name>
+{
+
+  use association _Inquiry { create; }
+}
+
+define behavior for ZSLAN_C_VA_INQUIRY //alias <alias_name>
+{
+  use update;
+  use delete;
+  use association _Applicant;
+}

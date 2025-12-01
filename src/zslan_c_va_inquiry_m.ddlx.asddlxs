@@ -1,0 +1,64 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo:
+{ 
+    typeName: 'Vacation Inquiry',
+    typeNamePlural: 'Vacation Inquiries',
+    title.value: 'InquiryUuId',
+    description.value: 'CommentText'
+}
+annotate entity ZSLAN_C_VA_INQUIRY_M
+    with 
+{
+    @UI.facet:
+    [
+        { position: 10, targetQualifier: 'InquiryData', label: 'Inquiry Details', type: #FIELDGROUP_REFERENCE },
+        { position: 20, targetQualifier: 'AdminData', label: 'Administrative Details', type: #FIELDGROUP_REFERENCE }
+    ]    
+    
+    @UI.lineItem:
+    [
+        { position: 10, dataAction: 'ApproveVacationRequest', label: 'Approve', type: #FOR_ACTION },
+        { position: 20, dataAction: 'DeclineVacationRequest', label: 'Decline', type: #FOR_ACTION}
+    ]
+    InquiryUuId;
+    
+    @UI.lineItem: [ { position: 30, label: 'Applicant' } ]
+    @UI.selectionField: [ {position: 10} ]
+    @UI.fieldGroup: [ { position: 20, qualifier: 'InquiryData', label: 'Applicant' } ]
+    ApplicantName;
+    
+    @UI.lineItem: [ { position: 40, label: 'Approver' } ]
+    @UI.fieldGroup: [ { position: 30, qualifier: 'InquiryData', label: 'Approver' } ]
+    ApproverName;
+    
+    @UI.lineItem: [ { position: 50, label: 'Begin Date' } ]
+    @UI.fieldGroup: [ { position: 40, qualifier: 'InquiryData', label: 'Begin Date' } ]
+    BeginDate;
+    
+    @UI.lineItem: [ { position: 60, label: 'End Date' } ]
+    @UI.fieldGroup: [ { position: 50, qualifier: 'InquiryData', label: 'End Date' } ]
+    EndDate;
+    
+    @UI.lineItem: [ { position: 70, label: 'Status' } ]
+    @UI.selectionField: [ {position: 20} ]
+    @UI.fieldGroup: [ { position: 60, qualifier: 'InquiryData', label: 'Status' } ]
+    Status;
+    
+    @UI.lineItem: [ { position: 80, label: 'Comment' } ]
+    @UI.selectionField: [ {position: 30} ]
+    @UI.fieldGroup: [ { position: 70, qualifier: 'InquiryData', label: 'Comment' } ]
+    CommentText;
+    
+    @UI.fieldGroup: [{ position: 80, qualifier: 'AdminData' }]
+    CreatedBy;
+    
+    @UI.fieldGroup: [{ position: 90, qualifier: 'AdminData' }]
+    CreatedAt;
+    
+    @UI.fieldGroup: [{ position: 100, qualifier: 'AdminData' }]
+    LastChangedBy;
+    
+    @UI.fieldGroup: [{ position: 110, qualifier: 'AdminData' }]
+    LastChangedAt;
+    
+}

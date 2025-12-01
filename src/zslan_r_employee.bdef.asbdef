@@ -1,0 +1,117 @@
+managed implementation in class zslan_bp_r_employee unique;
+strict ( 2 );
+
+
+define behavior for ZSLAN_R_EMPLOYEE //alias <alias_name>
+persistent table zslan_employee
+lock master
+authorization master ( global )
+//etag master <field_name>
+{
+
+  association _Claim;
+  association _Inquiry { create; }
+  association _Applicant;
+  association _Approver;
+
+
+  field ( readonly, numbering : managed ) EmployeeUuId;
+
+  field ( readonly ) CreatedAt;
+  field ( readonly ) CreatedBy;
+  field ( readonly ) LastChangedAt;
+  field ( readonly ) LastChangedBy;
+
+
+  mapping for zslan_employee corresponding
+    {
+      EmployeeId    = employee_id;
+      EmployeeUuid  = employee_uuid;
+      FirstName     = first_name;
+      LastName      = last_name;
+      EntryDate     = entry_date;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+
+    }
+}
+
+define behavior for ZSLAN_R_VA_CLAIM //alias <alias_name>
+persistent table zslan_va_claim
+lock dependent by _Employee
+authorization dependent by _Employee
+//etag master <field_name>
+{
+
+
+  association _Employee;
+
+  field ( readonly ) Employeeuuid;
+  field ( readonly, numbering : managed ) ClaimUuid;
+
+  field ( readonly ) CreatedAt;
+  field ( readonly ) CreatedBy;
+  field ( readonly ) LastChangedAt;
+  field ( readonly ) LastChangedBy;
+
+  mapping for zslan_va_claim corresponding
+    {
+      claimuuId     = claim_uuid;
+      EmployeeUuid  = employee_uuid;
+      YearOfClaim   = year_of_claim;
+      VacationDays  = vacation_days;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+}
+
+define behavior for ZSLAN_R_VA_INQUIRY //alias <alias_name>
+persistent table zslan_va_inquiry
+lock dependent by _applicant
+authorization dependent by _applicant
+//etag master <field_name>
+{
+
+  update;
+  delete;
+
+  association _applicant;
+  association _approver;
+
+  action DeclineVacationRequest result [1] $self;
+  action ApproveVacationRequest result [1] $self;
+
+  validation ValidateVacDays on save { create; update; }
+  validation ValidateDates on save { create; update; }
+
+  determination DetermineStatus on modify { field ApproverName, BeginDate, enddate, CommentText; }
+  determination DetermineVacationDays on modify { field begindate, enddate; }
+
+  field ( readonly, numbering : managed ) InquiryUuId;
+  field ( mandatory : create ) BeginDate, EndDate, ApproverUuid;
+  field ( readonly ) ApproverName, ApplicantName, ApplicantUuid, CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, Status, vacationdays;
+
+  mapping for zslan_va_inquiry corresponding
+    {
+      inquiryuuid = inquiry_uuid;
+      ApplicantUuid = applicant_uuid;
+      ApproverUuid  = approver_uuid;
+      BeginDate     = begin_date;
+      EndDate       = end_date;
+      Status        = status;
+      CommentText   = comment_text;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+      vacationdays  = vacation_days;
+    }
+
+
+
+}

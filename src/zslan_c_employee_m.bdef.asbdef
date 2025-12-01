@@ -1,0 +1,18 @@
+projection;
+strict ( 2 );
+
+define behavior for ZSLAN_C_EMPLOYEE_M //alias <alias_name>
+{
+
+  use association _Inquiry;
+}
+
+define behavior for ZSLAN_C_VA_INQUIRY_M //alias <alias_name>
+{
+
+  use action DeclineVacationRequest;
+  use action ApproveVacationRequest;
+
+  use association _Applicant;
+  use association _Approver;
+}

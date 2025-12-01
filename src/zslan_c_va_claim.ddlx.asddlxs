@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo:
+{
+    typeNamePlural: 'Urlaubsansprüche',
+    typeName: 'Urlaubsanspruch',
+    title.value: 'ClaimUuid',
+    description.value: 'VacationDays'
+}
+
+annotate entity ZSLAN_C_VA_CLAIM with
+{
+  @UI.facet:
+  [
+  { position: 10, targetQualifier: 'EmployeeDetails', label: 'EmployeeDetails', type: #FIELDGROUP_REFERENCE },
+  { position: 20, targetQualifier: 'ApproverData', label: 'Approver Data', type: #FIELDGROUP_REFERENCE},
+  { position: 30, targetQualifier: 'AdminData', label: 'Administrative Daten', type: #FIELDGROUP_REFERENCE}
+  ]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'ApproverData', label: 'Claim Uuid' }]
+  ClaimUuid;
+
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails', label: 'Mitarbeiter Name' }]
+  EmployeeName;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails', label: 'Anspruchsjahr' }]
+  YearOfClaim;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails', label: 'Urlaubstage' }]
+  VacationDays;
+  
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
+  CreatedBy;
+  
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
+  CreatedAt;
+  
+  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
+  LastChangedBy;
+  
+  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
+  LastChangedAt;
+  
+  
+
+
+}

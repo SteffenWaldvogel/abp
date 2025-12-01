@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class Vacation Inquiry</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>The Vacation &amp;1 was declined successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>The Vacation &amp;1 was already declined</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>The Vacation &amp;1 was approved successfully</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>The Vacation &amp;1 was already approved</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>The end date cannot be before the start date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Insufficient vacationdays left</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZSLAN_VA_INQUIRY</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>The start date  cannot be in the past</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

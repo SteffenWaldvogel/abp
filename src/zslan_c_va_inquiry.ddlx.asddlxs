@@ -1,0 +1,69 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeNamePlural: 'Urlaubsanträge',
+    typeName: 'Urlaubsantrag',
+    title.value: 'ApplicantName',
+    description.value: 'CommentText'
+}
+annotate entity ZSLAN_C_VA_INQUIRY with
+{
+  @UI.facet: [
+    { position: 10, targetQualifier: 'AdminData', label: 'Administrative Daten', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'InquiryData', label: 'Antrags Daten', type: #FIELDGROUP_REFERENCE}
+  ]
+  _Applicant;
+
+  
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 10, label: 'Antragsteller' }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'InquiryData', label: 'Applicant Name' }]
+  ApplicantName;
+  
+  @UI.fieldGroup: [ { position: 15, qualifier: 'InquiryData', label: 'Applicant UUID' } ]
+  ApplicantUuid;
+  
+  @UI.lineItem: [{ position: 20, label: 'Beginn' }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'InquiryData', label: 'Beginn' }]
+  BeginDate;
+
+  @UI.lineItem: [{ position: 30, label: 'Ende' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'InquiryData', label: 'Ende' }]
+  EndDate;
+
+  @UI.lineItem: [{ position: 40, label: 'Tage' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'InquiryData', label: 'Tage' }]
+  vacationdays;
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 50, label: 'Genehmiger' }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'InquiryData', label: 'Genehmiger' }]
+  ApproverName;
+  
+  @UI.fieldGroup: [ { position: 55, qualifier: 'InquiryData', label: 'Approver UUID' } ]
+  ApproverUuid;
+
+  @UI.lineItem: [{ position: 60, label: 'Kommentar' }]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'InquiryData', label: 'Comment' }]
+  CommentText;
+
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 70, label: 'Status' }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'InquiryData', label: 'Status' }]
+  Status;
+  @UI.lineItem: [ { position: 80, label: 'Inquiry Uuid' } ]
+  @UI.fieldGroup: [ { position: 80, qualifier: 'InquiryData', label: 'Inquiry Uuid' } ]
+  InquiryUuId;
+
+  @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]
+  CreatedBy;
+  
+  @UI.fieldGroup: [{ position: 20, qualifier: 'AdminData' }]
+  CreatedAt;
+  
+  @UI.fieldGroup: [{ position: 30, qualifier: 'AdminData' }]
+  LastChangedBy;
+  
+  @UI.fieldGroup: [{ position: 40, qualifier: 'AdminData' }]
+  LastChangedAt;   
+
+}
