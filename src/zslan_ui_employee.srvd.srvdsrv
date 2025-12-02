@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition UI Employee'
+define service ZSLAN_UI_EMPLOYEE {
+  expose ZSLAN_C_EMPLOYEE     as EmployeeApp;
+  expose ZSLAN_C_VA_INQUIRY;
+  expose ZSLAN_C_VA_CLAIM;
+  expose ZSLAN_C_VA_INQUIRY_M as ManagerApp;
+}

@@ -9,11 +9,11 @@
 annotate entity ZSLAN_C_EMPLOYEE with
 {
   @UI.facet: [
-    { position: 10, targetQualifier: 'EmployeeDetails', label: 'Mitarbeiterdetails', type: #FIELDGROUP_REFERENCE },
-    { position: 20, targetElement: '_Inquiry', label: 'Eigene Urlaubsanträge', type: #LINEITEM_REFERENCE },
-    { position: 30, targetElement: '_Claim',     label: 'Urlaubsanspruch', type: #LINEITEM_REFERENCE },
-    { position: 40, targetQualifier: 'VacDays', label: 'Urlaubstagsplanung', type: #FIELDGROUP_REFERENCE},
-    { position: 50, targetQualifier: 'AdminData', label: 'Administrative Daten', type: #FIELDGROUP_REFERENCE }
+    { position: 10, targetQualifier: 'EmployeeDetails', label: 'Employee Details', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetElement: '_Inquiry', label: 'Vacation Inquries', type: #LINEITEM_REFERENCE },
+    { position: 30, targetElement: '_Claim',     label: 'Vacation Claims', type: #LINEITEM_REFERENCE },
+    { position: 40, targetQualifier: 'VacDays', label: 'Vacation Days', type: #FIELDGROUP_REFERENCE},
+    { position: 50, targetQualifier: 'AdminData', label: 'Admin Data', type: #FIELDGROUP_REFERENCE }
   ]
   
   @UI.lineItem: [ { position: 10, label: 'Employee Id' } ]
@@ -21,26 +21,26 @@ annotate entity ZSLAN_C_EMPLOYEE with
   @UI.fieldGroup: [{ position: 10, qualifier: 'EmployeeDetails', label: 'Employee Id' }]
   EmployeeId;
 
-  @UI.lineItem: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, label: 'First Name' }]
   @UI.selectionField: [{ position: 20 }]
-  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails', label: 'Vorname' }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails', label: 'First Name' }]
   FirstName;
 
-  @UI.lineItem: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40, label: 'Last Name' }]
   @UI.selectionField: [{ position: 30 }]
-  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails', label: 'Nachname' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails', label: 'Last Name' }]
   LastName;
 
-  @UI.lineItem: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50, label: 'Entry Date' }]
   @UI.selectionField: [{ position: 40 }]
-  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails', label: 'Eintrittsdatum' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails', label: 'Entry Date' }]
   EntryDate;
 
-  @UI.fieldGroup: [ { position: 10, qualifier: 'VacDays', label: 'Verfügbare Urlaubstage'} ]
+  @UI.fieldGroup: [ { position: 10, qualifier: 'VacDays', label: 'Available Days'} ]
   AvailableVacationDays;
-  @UI.fieldGroup: [ { position: 20, qualifier: 'VacDays', label: 'Genutzte Urlaubstage'} ]
+  @UI.fieldGroup: [ { position: 20, qualifier: 'VacDays', label: 'Used Days'} ]
   ConsumedVacationDays;
-  @UI.fieldGroup: [ { position: 30, qualifier: 'VacDays', label: 'Verplante Urlaubstage'} ]
+  @UI.fieldGroup: [ { position: 30, qualifier: 'VacDays', label: 'Planned Days'} ]
   PlannedVacationDays;
 
   @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]

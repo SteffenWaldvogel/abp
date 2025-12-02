@@ -12,7 +12,7 @@ annotate entity ZSLAN_C_VA_INQUIRY_M
     @UI.facet:
     [
         { position: 10, targetQualifier: 'InquiryData', label: 'Inquiry Details', type: #FIELDGROUP_REFERENCE },
-        { position: 20, targetQualifier: 'AdminData', label: 'Administrative Details', type: #FIELDGROUP_REFERENCE }
+        { position: 20, targetQualifier: 'AdminData', label: 'Admin Data', type: #FIELDGROUP_REFERENCE }
     ]    
     
     @UI.lineItem:
@@ -31,8 +31,8 @@ annotate entity ZSLAN_C_VA_INQUIRY_M
     @UI.fieldGroup: [ { position: 30, qualifier: 'InquiryData', label: 'Approver' } ]
     ApproverName;
     
-    @UI.lineItem: [ { position: 50, label: 'Begin Date' } ]
-    @UI.fieldGroup: [ { position: 40, qualifier: 'InquiryData', label: 'Begin Date' } ]
+    @UI.lineItem: [ { position: 50, label: 'Start Date' } ]
+    @UI.fieldGroup: [ { position: 40, qualifier: 'InquiryData', label: 'Start Date' } ]
     BeginDate;
     
     @UI.lineItem: [ { position: 60, label: 'End Date' } ]

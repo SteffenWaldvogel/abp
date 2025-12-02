@@ -11,26 +11,26 @@ annotate entity ZSLAN_C_VA_CLAIM with
 {
   @UI.facet:
   [
-  { position: 10, targetQualifier: 'EmployeeDetails', label: 'EmployeeDetails', type: #FIELDGROUP_REFERENCE },
+  { position: 10, targetQualifier: 'EmployeeDetails', label: 'Employee Details', type: #FIELDGROUP_REFERENCE },
   { position: 20, targetQualifier: 'ApproverData', label: 'Approver Data', type: #FIELDGROUP_REFERENCE},
-  { position: 30, targetQualifier: 'AdminData', label: 'Administrative Daten', type: #FIELDGROUP_REFERENCE}
+  { position: 30, targetQualifier: 'AdminData', label: 'Admin Data', type: #FIELDGROUP_REFERENCE}
   ]
   @UI.fieldGroup: [{ position: 10, qualifier: 'ApproverData', label: 'Claim Uuid' }]
   ClaimUuid;
 
 
-  @UI.lineItem: [{ position: 10 }]
-  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails', label: 'Mitarbeiter Name' }]
+  @UI.lineItem: [{ position: 10, label: 'Employee Name' }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails', label: 'Employee Name' }]
   EmployeeName;
 
-  @UI.lineItem: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, label: 'Year of Claim' }]
   @UI.selectionField: [{ position: 20 }]
-  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails', label: 'Anspruchsjahr' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails', label: 'Year of Claim' }]
   YearOfClaim;
 
-  @UI.lineItem: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40, label: 'Vacation Days' }]
   @UI.selectionField: [{ position: 30 }]
-  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails', label: 'Urlaubstage' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails', label: 'Vacation Days' }]
   VacationDays;
   
   @UI.fieldGroup: [{ position: 10, qualifier: 'AdminData' }]

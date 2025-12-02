@@ -8,41 +8,41 @@
 annotate entity ZSLAN_C_VA_INQUIRY with
 {
   @UI.facet: [
-    { position: 10, targetQualifier: 'AdminData', label: 'Administrative Daten', type: #FIELDGROUP_REFERENCE },
-    { position: 20, targetQualifier: 'InquiryData', label: 'Antrags Daten', type: #FIELDGROUP_REFERENCE}
+    { position: 10, targetQualifier: 'AdminData', label: 'Admin Data', type: #FIELDGROUP_REFERENCE },
+    { position: 20, targetQualifier: 'InquiryData', label: 'Inquiry Details', type: #FIELDGROUP_REFERENCE}
   ]
   _Applicant;
 
   
   @UI.selectionField: [{ position: 10 }]
-  @UI.lineItem: [{ position: 10, label: 'Antragsteller' }]
+  @UI.lineItem: [{ position: 10, label: 'Applicant Name' }]
   @UI.fieldGroup: [{ position: 10, qualifier: 'InquiryData', label: 'Applicant Name' }]
   ApplicantName;
   
   @UI.fieldGroup: [ { position: 15, qualifier: 'InquiryData', label: 'Applicant UUID' } ]
   ApplicantUuid;
   
-  @UI.lineItem: [{ position: 20, label: 'Beginn' }]
-  @UI.fieldGroup: [{ position: 20, qualifier: 'InquiryData', label: 'Beginn' }]
+  @UI.lineItem: [{ position: 20, label: 'Start Date' }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'InquiryData', label: 'Start Date' }]
   BeginDate;
 
-  @UI.lineItem: [{ position: 30, label: 'Ende' }]
-  @UI.fieldGroup: [{ position: 30, qualifier: 'InquiryData', label: 'Ende' }]
+  @UI.lineItem: [{ position: 30, label: 'End Date' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'InquiryData', label: 'End Date' }]
   EndDate;
 
-  @UI.lineItem: [{ position: 40, label: 'Tage' }]
-  @UI.fieldGroup: [{ position: 40, qualifier: 'InquiryData', label: 'Tage' }]
+  @UI.lineItem: [{ position: 40, label: 'Vacation Days' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'InquiryData', label: 'Vacation Days' }]
   vacationdays;
 
   @UI.selectionField: [{ position: 20 }]
-  @UI.lineItem: [{ position: 50, label: 'Genehmiger' }]
-  @UI.fieldGroup: [{ position: 50, qualifier: 'InquiryData', label: 'Genehmiger' }]
+  @UI.lineItem: [{ position: 50, label: 'Approver' }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'InquiryData', label: 'Approver' }]
   ApproverName;
   
   @UI.fieldGroup: [ { position: 55, qualifier: 'InquiryData', label: 'Approver UUID' } ]
   ApproverUuid;
 
-  @UI.lineItem: [{ position: 60, label: 'Kommentar' }]
+  @UI.lineItem: [{ position: 60, label: 'Comment' }]
   @UI.fieldGroup: [{ position: 60, qualifier: 'InquiryData', label: 'Comment' }]
   CommentText;
 
